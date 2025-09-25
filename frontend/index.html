@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seu Manoel - Empacotamento</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner">
+      <h1>Empacotamento Inteligente</h1>
+      <p>Monte seus pedidos, calcule em tempo real e visualize o resultado.</p>
+    </div>
+  </header>
+
+  <main class="container grid">
+    <section class="card stretch">
+      <div class="card__header">
+        <h2>Conexão e Autenticação</h2>
+      </div>
+      <div class="row">
+        <label>API Base</label>
+        <input id="base" value="http://localhost:3000" />
+      </div>
+      <div class="row">
+        <label>Usuário</label>
+        <input id="user" value="admin" />
+      </div>
+      <div class="row">
+        <label>Senha</label>
+        <input id="pass" value="admin123" type="password" />
+      </div>
+      <div class="row buttons">
+        <button id="btnLogin">Obter Token</button>
+        <button id="btnDocs" class="ghost">Abrir Swagger</button>
+      </div>
+      <div id="loginMsg" class="msg"></div>
+    </section>
+
+    <section class="card stretch">
+      <div class="card__header">
+        <h2>Montagem do Pedido</h2>
+        <div class="pill">Pedido atual: <span id="pedidoId">1</span></div>
+      </div>
+
+      <div class="grid two">
+        <div class="subcard">
+          <h3>Adicionar Produto</h3>
+          <div class="row">
+            <label>ID</label>
+            <input id="pId" placeholder="ex: PS5" />
+          </div>
+          <div class="row three">
+            <div>
+              <label>Altura</label>
+              <input id="pAlt" type="number" min="1" placeholder="cm" />
+            </div>
+            <div>
+              <label>Largura</label>
+              <input id="pLar" type="number" min="1" placeholder="cm" />
+            </div>
+            <div>
+              <label>Compr.</label>
+              <input id="pComp" type="number" min="1" placeholder="cm" />
+            </div>
+          </div>
+          <div class="row buttons">
+            <button id="addProd">Adicionar Produto</button>
+            <button id="clearProds" class="ghost">Limpar Produtos</button>
+          </div>
+          <div class="tableWrap">
+            <table class="table" id="prodTable">
+              <thead>
+                <tr><th>Produto</th><th>Alt</th><th>Lar</th><th>Comp</th><th></th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="row buttons">
+            <button id="addPedido" class="secondary">Adicionar Pedido</button>
+          </div>
+        </div>
+
+        <div class="subcard">
+          <h3>Pedidos</h3>
+          <div class="tableWrap">
+            <table class="table" id="pedidosTable">
+              <thead>
+                <tr><th>Pedido</th><th>Qtd. Produtos</th><th></th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <label>JSON (somente leitura)</label>
+          <textarea id="payload" rows="10" readonly></textarea>
+        </div>
+      </div>
+
+      <div class="row buttons end">
+        <button id="btnCalc" class="primary">Calcular Empacotamento</button>
+        <button id="resetAll" class="ghost">Resetar Tudo</button>
+      </div>
+      <pre id="out"></pre>
+    </section>
+  </main>
+
+  <footer class="footer">Frontend para testes — Loja do Seu Manoel</footer>
+
+  <script src="/main.js"></script>
+</body>
+</html>

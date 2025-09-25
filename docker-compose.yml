@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  api:
+    build: .
+    container_name: seu-manoel-api
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - PORT=${PORT:-3000}
+      - JWT_SECRET=${JWT_SECRET:-dev-secret-change-me}
+      - ADMIN_USER=${ADMIN_USER:-admin}
+      - ADMIN_PASS=${ADMIN_PASS:-admin123}
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+    container_name: seu-manoel-web
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+
