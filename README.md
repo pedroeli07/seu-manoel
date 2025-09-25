@@ -58,7 +58,7 @@ Sistema completo de empacotamento automatizado para a Loja do Seu Manoel, desenv
 
 ### 1. Clone o repositório
 ```bash
-git clone [<url-do-repositorio>](https://github.com/pedroeli07/seu-manoel)
+git clone https://github.com/pedroeli07/seu-manoel
 cd seu-manoel
 ```
 
