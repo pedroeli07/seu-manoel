@@ -358,7 +358,7 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ## 👨‍💻 Autor
 
-Desenvolvido para o processo seletivo da **Loja do Seu Manoel**.
+Desenvolvido para o processo seletivo da EMPRESA L2.
 
 ---
 
